@@ -20,3 +20,18 @@ Through project 1, I implemented elementary logic gates, their 16 bit variants, 
 | Xor | Mux16 | DMux4Way |
 | Mux |  | DMux8Way |
 | DMux |  |  |
+
+---
+### Project 2
+
+Through project 2, I implemented arithmetic chips, and built a fully functional ALU.
+
+| Chip | Description |
+| --- | --- |
+| HalfAdder | Adds two bits, outputs sum and carry |
+| FullAdder | Adds three bits (two inputs + carry-in), outputs sum and carry |
+| Add16 | Adds two 16-bit numbers by chaining one half adder and fifteen full adders |
+| Inc16 | Increments a 16-bit number by 1 |
+| ALU | Computes one of 18 functions on two 16-bit inputs based on 6 control bits |
+
+The ALU is built ontop of these chips. It takes two 16-bit inputs `x` and `y` and six control bits and pre-processes the inputs, selects between addition and bitwise AND, and post-processes the output. It also outputs two status bits: `ng` indicating whether or not the output is negative, and `zr` which detects whether the output is 0 or not.
