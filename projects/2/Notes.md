@@ -32,6 +32,8 @@ Add16 performs 16-bit addition by chaining one half adder and fifteen full adder
 
 The ALU takes two 16-bit inputs `x` and `y` and six control bits (`zx`, `nx`, `zy`, `ny`, `f`, `no`) that determine which of 18 functions of interest to perform. We first process `x`, then process `y`, then compute the function, and handle the output.
 
+![ALU Architecture](./ALU%20Architecture.png)
+
 ### Stage 1 — Pre-process x
 
 The `x` input is conditionally zeroed and/or negated before any computation.

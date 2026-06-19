@@ -7,10 +7,9 @@ This repo contains my solutions to the projects of the first part of the [Nand2T
 The projects folder goes from `projects/1` through `projects/6`, each with their own `Notes.md` file discussing concepts and tips. The code in each project has been tested using the test and compare files the course provided, which I have not shared in my repo due to copyright.
 
 ---
-### Project 1
+### Project 1 - Boolean Logic
 
 Through project 1, I implemented elementary logic gates, their 16 bit variants, and their multi-way variants.
-
 
 | Elementary | 16-bit variants | Multi-way variants |
 | --- | --- | --- |
@@ -22,7 +21,7 @@ Through project 1, I implemented elementary logic gates, their 16 bit variants, 
 | DMux |  |  |
 
 ---
-### Project 2
+### Project 2 - Boolean Arithmetic and ALU
 
 Through project 2, I implemented arithmetic chips, and built a fully functional ALU.
 
@@ -35,3 +34,16 @@ Through project 2, I implemented arithmetic chips, and built a fully functional 
 | ALU | Computes one of 18 functions on two 16-bit inputs based on 6 control bits |
 
 The ALU is built ontop of these chips. It takes two 16-bit inputs `x` and `y` and six control bits and pre-processes the inputs, selects between addition and bitwise AND, and post-processes the output. It also outputs two status bits: `ng` indicating whether or not the output is negative, and `zr` which detects whether the output is 0 or not.
+
+---
+### Project 3 - Memory
+
+In project 3, I started to implement sequential logic, where the output depends on the previous input. I started with a `Bit` that utilizes a DFF (D Flip Flop) that outputs the input from the previous cycle. The 16-bit register is built on top of this `Bit`. I built the RAM using this register. There are 5 different RAM chips, which differ by the number of registers they contain. I also built a PC (Program Counter) that is built upon chips built in project 2, such as the incrementor.
+
+ Sequential Logic | RAM Chips |
+| --- | --- |
+| Bit | RAM8 |
+| Register | RAM64 |
+| PC | RAM512 |
+| | RAM4K (4,096 registers) |
+| | RAM16K (16,384 registers) |
