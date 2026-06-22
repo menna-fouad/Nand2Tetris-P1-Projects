@@ -38,7 +38,7 @@ The ALU is built ontop of these chips. It takes two 16-bit inputs `x` and `y` an
 ---
 ### Project 3 - Memory
 
-In project 3, I started to implement sequential logic, where the output depends on the previous input. I started with a `Bit` that utilizes a DFF (D Flip Flop) that outputs the input from the previous cycle. The 16-bit register is built on top of this `Bit`. I built the RAM using this register. There are 5 different RAM chips, which differ by the number of registers they contain. I also built a PC (Program Counter) that is built upon chips built in project 2, such as the incrementor.
+In project 3, I started to implement sequential logic, where the output depends on the previous input. I started with a `Bit` that utilizes a DFF (Data Flip Flop) that outputs the input from the previous cycle. The 16-bit register is built on top of this `Bit`. I built the RAM using this register. There are 5 different RAM chips, which differ by the number of registers they contain. I also built a PC (Program Counter) that is built upon chips built in project 2, such as the incrementor.
 
  Sequential Logic | RAM Chips |
 | --- | --- |
@@ -47,3 +47,13 @@ In project 3, I started to implement sequential logic, where the output depends 
 | PC | RAM512 |
 | | RAM4K (4,096 registers) |
 | | RAM16K (16,384 registers) |
+
+---
+### Project 4 - Machine Language
+
+In project 4, I wrote two programs directly in Hack assembly language to understand the Hack ISA before building the assembler in project 6. The Hack ISA has only two instruction types: A-instructions (@value) for loading constants and selecting memory addresses, and C-instructions (dest=comp;jump) for computation, memory writes, and control flow.
+
+| Program | Description |
+| --- | --- |
+| Multi.asm | Multiplies R0 and R1 by using repetitive addition and stores result in R2. |
+| Fill.asm | Probes the keyboard in an infite loop, filling the screen black if a key is pressed, white otherwise |
