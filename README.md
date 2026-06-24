@@ -57,3 +57,14 @@ In project 4, I wrote two programs directly in Hack assembly language to underst
 | --- | --- |
 | Multi.asm | Multiplies R0 and R1 by using repetitive addition and stores result in R2. |
 | Fill.asm | Probes the keyboard in an infite loop, filling the screen black if a key is pressed, white otherwise |
+
+---
+### Project 5 - HACK Computer
+
+In project 5, I used previously implemented chips, along with built-in chips (primarily for the GUI side effect), to build the `Memory`, `CPU` chip, and integrate everything into the final `Computer`.
+
+| Chip | Description |
+| --- | --- |
+| `Memory` | This is where the RAM along with the screen and keyboard memory map are implemented. The memory decides which part the address refers to using a `DMux`, and selects the output using a `Mux16` |
+| `CPU` | This implements the core processing logic, handling the `A`, `D`, and `M` registers, along with computation using the `ALU`, and the final storage in the required memory locations |
+| `Computer` | Connects the built-in `ROM32K`, and the implemented `Memory` and `CPU` chips into a working computer |
