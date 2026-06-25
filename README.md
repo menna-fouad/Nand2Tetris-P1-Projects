@@ -68,3 +68,20 @@ In project 5, I used previously implemented chips, along with built-in chips (pr
 | `Memory` | This is where the RAM along with the screen and keyboard memory map are implemented. The memory decides which part the address refers to using a `DMux`, and selects the output using a `Mux16` |
 | `CPU` | This implements the core processing logic, handling the `A`, `D`, and `M` registers, along with computation using the `ALU`, and the final storage in the required memory locations |
 | `Computer` | Connects the built-in `ROM32K`, and the implemented `Memory` and `CPU` chips into a working computer |
+
+---
+### Project 6 - Assembler
+
+The final project of part 1 of the course involved building an assembler that bridges between the programs written in HACK assembly language during project 4, and the `Computer` I built in project 5 that only handles binary code.
+
+I wrote a python program to translate the `.asm` files given in the project to `.hack` program that runs on the HACK `Computer`. This is known as cross-assembly where the assembler runs on one computer and produces machine language for another computer.
+
+| Program | Description |
+| --- | --- |
+| `Parser.py` | Defines the `initial_parser` for the first pass of defining the labels and unpacks the instructions into their underlying fields in the second pass |
+| `Code.py` | Translates each field into its corresponding binary value and merges them into the final binary instruction |
+| `HackAssembler.py` | The main program that manages the symbol table, file I/O, and drives the process by calling the functions in the mentioned programs in the correct order |
+
+---
+
+This completes Part 1 of the course, starting from a single NAND gate and building up through logic gates, an ALU, memory, a CPU, a working computer that integrates everything, and finally an assembler to program it.
